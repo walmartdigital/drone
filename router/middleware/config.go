@@ -15,7 +15,7 @@
 package middleware
 
 import (
-	"github.com/drone/drone/model"
+	"github.com/walmartdigital/drone/model"
 
 	"github.com/gin-gonic/gin"
 	"github.com/urfave/cli"

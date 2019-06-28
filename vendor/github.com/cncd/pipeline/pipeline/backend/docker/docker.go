@@ -78,7 +78,7 @@ func (e *engine) Exec(ctx context.Context, proc *backend.Step) error {
 			io.Copy(ioutil.Discard, rc)
 			rc.Close()
 		}
-		// fix for drone/drone#1917
+		// fix for walmartdigital/drone#1917
 		if perr != nil && proc.AuthConfig.Password != "" {
 			return perr
 		}

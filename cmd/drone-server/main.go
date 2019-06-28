@@ -18,7 +18,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/drone/drone/version"
+	"github.com/walmartdigital/drone/version"
 
 	_ "github.com/joho/godotenv/autoload"
 	"github.com/urfave/cli"

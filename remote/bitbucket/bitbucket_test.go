@@ -20,9 +20,9 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/drone/drone/model"
-	"github.com/drone/drone/remote/bitbucket/fixtures"
-	"github.com/drone/drone/remote/bitbucket/internal"
+	"github.com/walmartdigital/drone/model"
+	"github.com/walmartdigital/drone/remote/bitbucket/fixtures"
+	"github.com/walmartdigital/drone/remote/bitbucket/internal"
 
 	"github.com/franela/goblin"
 	"github.com/gin-gonic/gin"

@@ -28,13 +28,13 @@ import (
 	"github.com/cncd/pipeline/pipeline/rpc"
 	"github.com/cncd/pubsub"
 	"github.com/cncd/queue"
-	"github.com/drone/drone/remote"
-	"github.com/drone/drone/shared/httputil"
-	"github.com/drone/drone/store"
+	"github.com/walmartdigital/drone/remote"
+	"github.com/walmartdigital/drone/shared/httputil"
+	"github.com/walmartdigital/drone/store"
 	"github.com/gin-gonic/gin"
 
-	"github.com/drone/drone/model"
-	"github.com/drone/drone/router/middleware/session"
+	"github.com/walmartdigital/drone/model"
+	"github.com/walmartdigital/drone/router/middleware/session"
 )
 
 func GetBuilds(c *gin.Context) {

@@ -22,8 +22,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/drone/drone/model"
-	"github.com/drone/drone/remote/bitbucketserver/internal"
+	"github.com/walmartdigital/drone/model"
+	"github.com/walmartdigital/drone/remote/bitbucketserver/internal"
 	"github.com/mrjones/oauth"
 )
 

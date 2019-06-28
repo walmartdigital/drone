@@ -17,7 +17,7 @@ package github
 import (
 	"testing"
 
-	"github.com/drone/drone/model"
+	"github.com/walmartdigital/drone/model"
 	"github.com/google/go-github/github"
 
 	"github.com/franela/goblin"

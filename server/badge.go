@@ -20,9 +20,9 @@ import (
 	log "github.com/Sirupsen/logrus"
 	"github.com/gin-gonic/gin"
 
-	"github.com/drone/drone/model"
-	"github.com/drone/drone/shared/httputil"
-	"github.com/drone/drone/store"
+	"github.com/walmartdigital/drone/model"
+	"github.com/walmartdigital/drone/shared/httputil"
+	"github.com/walmartdigital/drone/store"
 )
 
 var (

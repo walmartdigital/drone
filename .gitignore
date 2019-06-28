@@ -1,4 +1,4 @@
-drone/drone
+walmartdigital/drone
 *.sqlite
 *.txt
 *.out

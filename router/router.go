@@ -20,13 +20,13 @@ import (
 	"github.com/dimfeld/httptreemux"
 	"github.com/gin-gonic/gin"
 
-	"github.com/drone/drone/router/middleware/header"
-	"github.com/drone/drone/router/middleware/session"
-	"github.com/drone/drone/router/middleware/token"
-	"github.com/drone/drone/server"
-	"github.com/drone/drone/server/debug"
-	"github.com/drone/drone/server/metrics"
-	"github.com/drone/drone/server/web"
+	"github.com/walmartdigital/drone/router/middleware/header"
+	"github.com/walmartdigital/drone/router/middleware/session"
+	"github.com/walmartdigital/drone/router/middleware/token"
+	"github.com/walmartdigital/drone/server"
+	"github.com/walmartdigital/drone/server/debug"
+	"github.com/walmartdigital/drone/server/metrics"
+	"github.com/walmartdigital/drone/server/web"
 )
 
 // Load loads the router

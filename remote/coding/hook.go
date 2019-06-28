@@ -22,7 +22,7 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/drone/drone/model"
+	"github.com/walmartdigital/drone/model"
 )
 
 const (

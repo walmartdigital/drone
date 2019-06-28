@@ -5,8 +5,8 @@
 package secrets
 
 import (
-	"github.com/drone/drone/model"
-	"github.com/drone/drone/store"
+	"github.com/walmartdigital/drone/model"
+	"github.com/walmartdigital/drone/store"
 )
 
 // NewDefault returns the Store wrapped as a Service.

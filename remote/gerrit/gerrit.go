@@ -20,8 +20,8 @@ import (
 	"net/http"
 	"net/url"
 
-	"github.com/drone/drone/model"
-	"github.com/drone/drone/remote"
+	"github.com/walmartdigital/drone/model"
+	"github.com/walmartdigital/drone/remote"
 )
 
 // IMPORTANT Gerrit support is not yet implemented. This file is a placeholder

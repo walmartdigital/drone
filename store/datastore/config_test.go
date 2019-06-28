@@ -17,7 +17,7 @@ package datastore
 import (
 	"testing"
 
-	"github.com/drone/drone/model"
+	"github.com/walmartdigital/drone/model"
 )
 
 func TestConfig(t *testing.T) {

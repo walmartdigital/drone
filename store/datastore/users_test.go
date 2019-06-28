@@ -17,8 +17,8 @@ package datastore
 import (
 	"testing"
 
-	"github.com/drone/drone/model"
 	"github.com/franela/goblin"
+	"github.com/walmartdigital/drone/model"
 )
 
 func TestUsers(t *testing.T) {
@@ -196,7 +196,7 @@ func TestUsers(t *testing.T) {
 			repo2 := &model.Repo{
 				Owner:    "drone",
 				Name:     "drone",
-				FullName: "drone/drone",
+				FullName: "walmartdigital/drone",
 				IsActive: true,
 			}
 			repo3 := &model.Repo{

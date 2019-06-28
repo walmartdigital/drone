@@ -24,9 +24,9 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/drone/drone/model"
-	"github.com/drone/drone/remote"
-	"github.com/drone/drone/shared/httputil"
+	"github.com/walmartdigital/drone/model"
+	"github.com/walmartdigital/drone/remote"
+	"github.com/walmartdigital/drone/shared/httputil"
 
 	"github.com/google/go-github/github"
 	"golang.org/x/net/context"

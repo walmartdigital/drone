@@ -2,7 +2,7 @@ package vault
 
 import (
 	"fmt"
-	"github.com/drone/drone/plugins/internal"
+	"github.com/walmartdigital/drone/plugins/internal"
 	"io/ioutil"
 	"time"
 )

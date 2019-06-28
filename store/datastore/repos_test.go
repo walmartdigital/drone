@@ -17,8 +17,8 @@ package datastore
 import (
 	"testing"
 
-	"github.com/drone/drone/model"
 	"github.com/franela/goblin"
+	"github.com/walmartdigital/drone/model"
 )
 
 func TestRepos(t *testing.T) {
@@ -147,7 +147,7 @@ func TestRepoList(t *testing.T) {
 	repo2 := &model.Repo{
 		Owner:    "drone",
 		Name:     "drone",
-		FullName: "drone/drone",
+		FullName: "walmartdigital/drone",
 	}
 	repo3 := &model.Repo{
 		Owner:    "octocat",
@@ -204,7 +204,7 @@ func TestRepoListLatest(t *testing.T) {
 	repo2 := &model.Repo{
 		Owner:    "drone",
 		Name:     "drone",
-		FullName: "drone/drone",
+		FullName: "walmartdigital/drone",
 		IsActive: true,
 	}
 	repo3 := &model.Repo{
@@ -283,13 +283,13 @@ func TestRepoCount(t *testing.T) {
 	repo2 := &model.Repo{
 		Owner:    "drone",
 		Name:     "drone",
-		FullName: "drone/drone",
+		FullName: "walmartdigital/drone",
 		IsActive: true,
 	}
 	repo3 := &model.Repo{
 		Owner:    "drone",
 		Name:     "drone-ui",
-		FullName: "drone/drone-ui",
+		FullName: "walmartdigital/drone-ui",
 		IsActive: false,
 	}
 	s.CreateRepo(repo1)

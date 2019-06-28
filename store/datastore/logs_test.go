@@ -19,7 +19,7 @@ import (
 	"io/ioutil"
 	"testing"
 
-	"github.com/drone/drone/model"
+	"github.com/walmartdigital/drone/model"
 )
 
 func TestLogCreateFind(t *testing.T) {

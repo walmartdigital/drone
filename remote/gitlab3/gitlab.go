@@ -24,12 +24,12 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/drone/drone/model"
-	"github.com/drone/drone/remote"
-	"github.com/drone/drone/shared/httputil"
-	"github.com/drone/drone/shared/oauth2"
+	"github.com/walmartdigital/drone/model"
+	"github.com/walmartdigital/drone/remote"
+	"github.com/walmartdigital/drone/shared/httputil"
+	"github.com/walmartdigital/drone/shared/oauth2"
 
-	"github.com/drone/drone/remote/gitlab3/client"
+	"github.com/walmartdigital/drone/remote/gitlab3/client"
 )
 
 const DefaultScope = "api"

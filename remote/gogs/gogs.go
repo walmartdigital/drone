@@ -22,8 +22,8 @@ import (
 	"net/url"
 	"strings"
 
-	"github.com/drone/drone/model"
-	"github.com/drone/drone/remote"
+	"github.com/walmartdigital/drone/model"
+	"github.com/walmartdigital/drone/remote"
 	"github.com/gogits/go-gogs-client"
 )
 

@@ -11,8 +11,8 @@ import (
 	"time"
 
 	"github.com/Sirupsen/logrus"
-	"github.com/drone/drone/model"
-	"github.com/drone/drone/plugins/secrets"
+	"github.com/walmartdigital/drone/model"
+	"github.com/walmartdigital/drone/plugins/secrets"
 
 	"github.com/hashicorp/vault/api"
 	"gopkg.in/yaml.v2"

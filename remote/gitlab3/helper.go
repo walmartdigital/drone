@@ -22,7 +22,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/drone/drone/remote/gitlab3/client"
+	"github.com/walmartdigital/drone/remote/gitlab3/client"
 )
 
 const (

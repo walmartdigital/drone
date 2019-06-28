@@ -15,9 +15,9 @@
 package server
 
 import (
-	"github.com/drone/drone/store"
-	"github.com/drone/drone/version"
 	"github.com/gin-gonic/gin"
+	"github.com/walmartdigital/drone/store"
+	"github.com/walmartdigital/drone/version"
 )
 
 // Health endpoint returns a 500 if the server state is unhealthy.
@@ -32,7 +32,7 @@ func Health(c *gin.Context) {
 // Version endpoint returns the server version and build information.
 func Version(c *gin.Context) {
 	c.JSON(200, gin.H{
-		"source":  "https://github.com/drone/drone",
+		"source":  "https://github.com/walmartdigital/drone",
 		"version": version.Version.String(),
 	})
 }

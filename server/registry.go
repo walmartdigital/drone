@@ -17,8 +17,8 @@ package server
 import (
 	"net/http"
 
-	"github.com/drone/drone/model"
-	"github.com/drone/drone/router/middleware/session"
+	"github.com/walmartdigital/drone/model"
+	"github.com/walmartdigital/drone/router/middleware/session"
 
 	"github.com/gin-gonic/gin"
 )

@@ -15,7 +15,7 @@
 package session
 
 import (
-	"github.com/drone/drone/shared/token"
+	"github.com/walmartdigital/drone/shared/token"
 	"github.com/gin-gonic/gin"
 )
 

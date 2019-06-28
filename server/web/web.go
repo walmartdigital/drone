@@ -24,10 +24,10 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/drone/drone-ui/dist"
-	"github.com/drone/drone/model"
-	"github.com/drone/drone/shared/token"
-	"github.com/drone/drone/version"
+	"github.com/walmartdigital/drone-ui/dist"
+	"github.com/walmartdigital/drone/model"
+	"github.com/walmartdigital/drone/shared/token"
+	"github.com/walmartdigital/drone/version"
 
 	"github.com/dimfeld/httptreemux"
 )

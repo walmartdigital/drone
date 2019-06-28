@@ -18,8 +18,8 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/drone/drone/model"
-	"github.com/drone/drone/remote/gogs/fixtures"
+	"github.com/walmartdigital/drone/model"
+	"github.com/walmartdigital/drone/remote/gogs/fixtures"
 
 	"github.com/franela/goblin"
 	"github.com/gin-gonic/gin"
