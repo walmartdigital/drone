@@ -29,12 +29,12 @@ import (
 	"github.com/gin-gonic/gin"
 
 	"github.com/Sirupsen/logrus"
+	"github.com/drone/envsubst"
 	"github.com/walmartdigital/drone/model"
 	"github.com/walmartdigital/drone/remote"
 	"github.com/walmartdigital/drone/shared/httputil"
 	"github.com/walmartdigital/drone/shared/token"
 	"github.com/walmartdigital/drone/store"
-	"github.com/drone/envsubst"
 
 	"github.com/cncd/pipeline/pipeline/backend"
 	"github.com/cncd/pipeline/pipeline/frontend"
@@ -492,6 +492,20 @@ func (b *builder) Build() ([]*buildItem, error) {
 			})
 		}
 
+		var lintersecrets []linter.LintSecret
+		for _, sec := range b.Secs {
+			if !sec.Match(b.Curr.Event) {
+				continue
+			}
+
+			lintersecrets = append(lintersecrets, linter.LintSecret{
+				Name:  sec.Name,
+				Value: sec.Value,
+				Match: sec.Images,
+			})
+
+		}
+
 		y := b.Yaml
 		s, err := envsubst.Eval(y, func(name string) string {
 			env := environ[name]
@@ -516,6 +530,7 @@ func (b *builder) Build() ([]*buildItem, error) {
 
 		lerr := linter.New(
 			linter.WithTrusted(b.Repo.IsTrusted),
+			linter.WithSecretlint(lintersecrets...),
 		).Lint(parsed)
 		if lerr != nil {
 			return nil, lerr

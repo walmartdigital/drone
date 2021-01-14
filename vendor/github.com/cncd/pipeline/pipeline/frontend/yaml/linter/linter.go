@@ -2,6 +2,9 @@ package linter
 
 import (
 	"fmt"
+	"os"
+	"regexp"
+	"strings"
 
 	"github.com/cncd/pipeline/pipeline/frontend/yaml"
 )
@@ -12,18 +15,39 @@ const (
 	blockServices
 )
 
+//Lintsecret
+type LintSecret struct {
+	Name  string
+	Value string
+	Match []string
+}
+
 // A Linter lints a pipeline configuration.
 type Linter struct {
 	trusted bool
+	secrets map[string]LintSecret
 }
 
 // New creates a new Linter with options.
 func New(opts ...Option) *Linter {
-	linter := new(Linter)
+
+	linter := &Linter{
+		secrets: map[string]LintSecret{},
+	}
+	// linter := & new(Linter)
 	for _, opt := range opts {
 		opt(linter)
 	}
 	return linter
+}
+
+//
+func WithSecretlint(secrets ...LintSecret) Option {
+	return func(l *Linter) {
+		for _, secret := range secrets {
+			l.secrets[strings.ToLower(secret.Name)] = secret
+		}
+	}
 }
 
 // Lint lints the configuration.
@@ -37,8 +61,36 @@ func (l *Linter) Lint(c *yaml.Config) error {
 	if err := l.lint(c.Pipeline.Containers, blockPipeline); err != nil {
 		return err
 	}
+	if err := l.verifySonar(c.Pipeline.Containers, blockPipeline); err != nil {
+		return err
+	}
 	if err := l.lint(c.Services.Containers, blockServices); err != nil {
 		return err
+	}
+	return nil
+}
+
+func (l *Linter) verifySonar(containers []*yaml.Container, block uint8) error {
+	sonarVerify := true
+
+	if len(os.Getenv("SONAR_GLOBAL_SKIP")) == 0 {
+		//check containers
+
+		for _, container := range containers {
+			if container.Name == "sonar" || container.Name == "code_analisys" {
+				//verify de image container
+				if matched, _ := regexp.MatchString(`^walmartdigital.azurecr.io/sonar-scanner-drone-plugin.*`, container.Image); matched {
+					sonarVerify = false
+				}
+			} else if _, ok := l.secrets["sonar_skip"]; ok {
+				sonarVerify = false
+			} else {
+				sonarVerify = true
+			}
+		}
+		if sonarVerify {
+			return fmt.Errorf("Pipeline must have Sonar step - please see https://bitbucket.org/walmartdigital/sonar-scanner-drone-plugin ")
+		}
 	}
 	return nil
 }
