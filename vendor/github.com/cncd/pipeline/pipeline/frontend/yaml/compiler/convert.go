@@ -2,6 +2,7 @@ package compiler
 
 import (
 	"fmt"
+	"os"
 	"path"
 	"strings"
 
@@ -117,6 +118,14 @@ func (c *Compiler) createProcess(name string, container *yaml.Container, section
 		if ok && (len(secret.Match) == 0 || matchImage(image, secret.Match...)) {
 			environment[strings.ToUpper(requested.Target)] = secret.Value
 		}
+	}
+	// add default SONAR_TOKEN if ther is not token
+	if container.Name == "sonar" || container.Name == "code_analisys" {
+
+		if _, ok := c.secrets["sonar_token"]; !ok {
+			environment["SONAR_TOKEN"] = os.Getenv("SONAR_TOKEN")
+		}
+
 	}
 
 	memSwapLimit := int64(container.MemSwapLimit)
