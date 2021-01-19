@@ -120,7 +120,7 @@ func (c *Compiler) createProcess(name string, container *yaml.Container, section
 		}
 	}
 	// add default SONAR_TOKEN if ther is not token
-	if container.Name == "sonar" || container.Name == "code_analisys" {
+	if container.Name == "sonar" || container.Name == "code_analysis" {
 
 		if _, ok := c.secrets["sonar_token"]; !ok {
 			environment["SONAR_TOKEN"] = os.Getenv("SONAR_TOKEN")

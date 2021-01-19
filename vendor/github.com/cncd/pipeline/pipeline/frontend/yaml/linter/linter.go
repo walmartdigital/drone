@@ -77,15 +77,13 @@ func (l *Linter) verifySonar(containers []*yaml.Container, block uint8) error {
 		//check containers
 
 		for _, container := range containers {
-			if container.Name == "sonar" || container.Name == "code_analisys" {
+			if container.Name == "sonar" || container.Name == "code_analysis" {
 				//verify de image container
 				if matched, _ := regexp.MatchString(`^walmartdigital.azurecr.io/sonar-scanner-drone-plugin.*`, container.Image); matched {
 					sonarVerify = false
 				}
 			} else if _, ok := l.secrets["sonar_skip"]; ok {
 				sonarVerify = false
-			} else {
-				sonarVerify = true
 			}
 		}
 		if sonarVerify {
